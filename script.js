@@ -8,7 +8,7 @@ class Calculator {
     clear() {
         this.currentOperand = ''
         this.previousOperand = ''
-        this.operation = undefined
+        this.operation = ''
     }
 
     delete() {
@@ -114,12 +114,14 @@ operationButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.chooseOperation(button.innerText)
         calculator.updateDisplay()
+        
     })
 })
 
 equalsButton.addEventListener('click', () => {
     calculator.compute()
     calculator.updateDisplay()
+    calculator.clear()
 })
 
 allClearButton.addEventListener('click', () => {

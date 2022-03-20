@@ -83,3 +83,9 @@ button.grey-color {
     background-color: #ffffffa6;
     
 }
+
+@media screen and (min-width: 350px)  {
+    .calculator-grid {
+        width: 100%;
+    }
+}
