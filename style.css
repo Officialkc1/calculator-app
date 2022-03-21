@@ -13,64 +13,79 @@ body {
 }
 
 body {
-    background-color: #000000;
+    background-color: #dfdfdf;
     padding: 0;
     margin: 0;
 }
 
 .calculator-grid {
+    background-color: rgb(0, 0, 0);
+    margin: auto;
+    margin-top: 40px;
+    width: 400px;
     display: grid;
     justify-content: center;
     align-content: center;
-    min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
-    gap: 3px;
+    min-height: 90vh;
+    grid-template-columns: repeat(4, 90px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 90px);
+    gap: 5px;
+    color: white;
+    border-radius: 20px;
 }
 
 .calculator-grid > button {
     cursor: pointer;
     font-size: 1.5rem;
-    border: 1px solid white;
+    border: 1px solid rgb(182, 182, 182);
     outline: none;
     background-color: grey;
     color: #ffffff;
     border-radius: 10px;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .calculator-grid > button:hover {
-    background-color: rgba(255, 255, 255, 0.918);
+    background-color: #ffffffea;
     color: black;
-    transition: 0.3s;
     size: inherit;
 }
 
-.span-two {
+button.radius {
+    border-radius: 50%;
+}
+
+button.span-two {
     grid-column: span 2;
-    border-radius: 15px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+
 }
 
 .output {
+    /* margin-top: 20px; */
     grid-column: 1 / -1;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
     flex-direction: column;
     padding: 10px;
-    background-color: white;
-    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
     word-wrap: break-word;
     word-break: break-all;
+    color: white;
 }
 
 .output .previous-operand {
-    color: rgb(92, 91, 91);
+    color: rgba(61, 61, 61, 0.555);
     font-size: 1.5rem;
 }
 
 .output .current-operand {
-    color: black;
+    color: rgb(0, 0, 0);
     font-size: 2rem;
 }
 
@@ -80,12 +95,6 @@ button.orange {
 }
 
 button.grey-color {
-    background-color: #ffffffa6;
+    background-color: #fcf9f9c5;
     
-}
-
-@media screen and (min-width: 350px)  {
-    .calculator-grid {
-        width: 100%;
-    }
 }

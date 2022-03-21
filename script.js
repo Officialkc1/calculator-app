@@ -8,7 +8,7 @@ class Calculator {
     clear() {
         this.currentOperand = ''
         this.previousOperand = ''
-        this.operation = ''
+        this.operation = undefined
     }
 
     delete() {
@@ -69,11 +69,11 @@ class Calculator {
         if (isNaN(integerDigits)) {
             integerDisplay = ''
         } else {
-            integerDisplay= integerDigits.toLocaleString('en', {
+            integerDisplay = integerDigits.toLocaleString('en', {
                 maximumFractionDigits:0
             })
         }
-        if (decimalDigits !=null) {
+        if (decimalDigits != null) {
             return `${integerDisplay}.${decimalDigits}`
         } else {
             return integerDisplay
