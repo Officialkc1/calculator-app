@@ -113,8 +113,7 @@ numberButtons.forEach(button => {
 operationButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.chooseOperation(button.innerText)
-        calculator.updateDisplay()
-        
+        calculator.updateDisplay() 
     })
 })
 
@@ -122,6 +121,7 @@ equalsButton.addEventListener('click', () => {
     calculator.compute()
     calculator.updateDisplay()
     calculator.clear()
+    
 })
 
 allClearButton.addEventListener('click', () => {
