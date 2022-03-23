@@ -2,6 +2,7 @@ class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement) {
         this.previousOperandTextElement = previousOperandTextElement
         this.currentOperandTextElement = currentOperandTextElement
+        this.equal = false
         this.clear()
 
     }
@@ -15,9 +16,23 @@ class Calculator {
         this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
 
-    appendNumber(number) {
-        if(number ==='.' && this.currentOperand.includes('.')) return
-        this.currentOperand = this.currentOperand.toString() + number.toString()
+    appendNumber(val = '') {
+        if(val ==='.' && this.currentOperand.includes('.')) {
+            return
+        } else {
+            if (this.equal && isNaN(val)) {
+                this.currentOperand = this.previousOperand + val
+                this.equal = false
+            }  else if (this.equal && !isNaN(val)) {
+                this.currentOperand = val
+                this.equal = false
+            } else {
+                this.currentOperand += val
+            }
+        }
+        // this.currentOperand = this.currentOperand.toString() + val.toString()
+         
+
     }
 
     chooseOperation(operation) {
@@ -32,6 +47,7 @@ class Calculator {
     }
 
     compute() {
+        this.equal = true;
         let computation;
         const prev = parseFloat(this.previousOperand)
         const current = parseFloat(this.currentOperand)
