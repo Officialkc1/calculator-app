@@ -27,7 +27,7 @@ class Calculator {
                 this.currentOperand = val
                 this.equal = false
             } else {
-                this.currentOperand += val
+                this.currentOperand += val.toString()
             }
         }
         // this.currentOperand = this.currentOperand.toString() + val.toString()
@@ -47,7 +47,7 @@ class Calculator {
     }
 
     compute() {
-        this.equal = true;
+        this.equal = true
         let computation;
         const prev = parseFloat(this.previousOperand)
         const current = parseFloat(this.currentOperand)
@@ -136,7 +136,6 @@ operationButtons.forEach(button => {
 equalsButton.addEventListener('click', () => {
     calculator.compute()
     calculator.updateDisplay()
-    calculator.clear()
     
 })
 

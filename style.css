@@ -23,6 +23,7 @@ body {
     margin: auto;
     margin-top: 40px;
     width: 400px;
+    max-width: 100%;
     display: grid;
     justify-content: center;
     align-content: center;
